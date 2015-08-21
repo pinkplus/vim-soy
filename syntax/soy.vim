@@ -102,8 +102,8 @@ syntax match soySpecialComment /@param?\?/ contained
 
 syntax region soyCommand start="{" end="}" contains=soyKeyword, soyDirective, soyIdentifier, soyString, soyTemplate, soyConstant, soyInteger, soyCharacter, soyFloat, soySci, soyOperator, soyFunction, soyRepeat, soyConditional, soyStatement, soyLabel
 
-syntax region soyString contained start="\'" end="\'"
-syntax region soyString contained start="\"" end="\""
+syntax region soyString contained start="\'" skip="\\\\\|\\'" end="\'"
+syntax region soyString contained start="\"" skip='\\\\\|\\"' end="\""
 
 syntax match soyIdentifier /\$[a-zA-Z0-9._]*\>/ contained
 syntax region soyComment start=/\/\*/ end='\\*\/' contains=soySpecialComment
