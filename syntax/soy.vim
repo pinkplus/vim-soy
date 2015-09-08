@@ -108,7 +108,7 @@ syntax region soyString contained start="\"" skip='\\\\\|\\"' end="\""
 syntax match soyIdentifier /\$[a-zA-Z0-9._]*\>/ contained
 syntax region soyComment start='/\*' end='\*/' contains=soySpecialComment
 
-syntax match soyComment /\/\/.*$/
+syntax match soyComment /\/\/\s.*$/
 syntax match soyTemplate /\s\+\.\w\+\>/ contained
 
 syntax match soyInteger /\-\?\(0x\)\?[A-F0-9]\+\>/ contained
